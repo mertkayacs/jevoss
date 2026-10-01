@@ -1,6 +1,10 @@
 # JevOss
 
-![JevOss: test any decision model that speaks the Jev API](docs/assets/card.png)
+![Emberwick: every villager asks a JevAlt model what to do next](https://raw.githubusercontent.com/mertkayacs/jevalt/media/emberwick-en.gif)
+
+*Emberwick, a village game where every villager asks a JevAlt model what to do next. Also in [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/gifs/emberwick-tr.gif) and [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/gifs/emberwick-de.gif).*
+
+![JevOss: test any decision model that speaks the Jev API](https://raw.githubusercontent.com/mertkayacs/jevalt/media/jevoss-card.png)
 
 Open toolkit to test and improve Jev-type decision models. Probes, calibration, conformal sets, and recipes for any `/v1/systemone` endpoint.
 
@@ -13,6 +17,12 @@ If this is useful to you, a star on GitHub helps other people find it.
 ## What it is
 
 JevOss tests decision models that speak TypeSafe's `/v1/systemone` API. Point it at an endpoint and it tells you how often the model is right, how honest its probabilities are, and which of Jev's known weak spots it shares. It works with anything that answers the Jev contract: Jev itself, JevAlt, Kev, Laya, Intern-Decision, or your own server.
+
+## What it found
+
+![Hidden instructions, option order, long policies and negated questions: JevAlt against Intern-Decision-4B, Kev-4B and Laya](docs/assets/charts/fixes.png)
+
+Same probes and held-out rows for every model, each as shipped. Kev-4B and Laya lose less accuracy under long padding. All results and the Jev 1.13 audit: [measured problems](docs/problems.md).
 
 ## Quickstart
 
