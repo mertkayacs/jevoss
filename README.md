@@ -1,5 +1,7 @@
 # JevOss
 
+![JevOss: test any decision model that speaks the Jev API](docs/assets/card.png)
+
 Open toolkit to test and improve Jev-type decision models. Probes, calibration, conformal sets, and recipes for any `/v1/systemone` endpoint.
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
