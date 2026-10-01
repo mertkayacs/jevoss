@@ -1,0 +1,36 @@
+{
+  "state": {
+    "policy": "Approve invoices under 5,000 EUR from approved vendors with a matching purchase order. Hold anything else for review. Reject duplicates.",
+    "invoice": {
+      "vendor": "Nordlicht Logistik GmbH",
+      "vendor_status": "approved",
+      "amount_eur": 4180,
+      "po_number": "PO-2291",
+      "po_found": true,
+      "invoice_number": "NL-7781"
+    },
+    "recent_invoices": [
+      {
+        "vendor": "Nordlicht Logistik GmbH",
+        "invoice_number": "NL-7779",
+        "amount_eur": 4180
+      }
+    ]
+  },
+  "questions": {
+    "decision": {
+      "type": "choice",
+      "instructions": "Under `policy`, what should happen to `invoice`?",
+      "criteria": {
+        "approve": "Pay it",
+        "hold": "Hold for a human review",
+        "reject": "Reject it"
+      }
+    },
+    "possible_duplicate": {
+      "type": "noul",
+      "instructions": "Could `invoice` be a duplicate of an entry in `recent_invoices`?"
+    }
+  },
+  "abstain": true
+}

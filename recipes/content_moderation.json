@@ -1,0 +1,26 @@
+{
+  "state": {
+    "platform": "product forum",
+    "post": "This update broke my exports again. Whoever shipped this should be fired, honestly. Is anyone else seeing the CSV bug?"
+  },
+  "questions": {
+    "action": {
+      "type": "choice",
+      "instructions": "What should moderation do with this post?",
+      "criteria": {
+        "allow": "Publish as is",
+        "warn": "Publish and remind the author of the tone rules",
+        "hide": "Hide until a moderator reviews it",
+        "remove": "Remove it"
+      }
+    },
+    "harassment": {
+      "type": "noul",
+      "instructions": "Does the post target a specific person with abuse?"
+    },
+    "on_topic": {
+      "type": "noul",
+      "instructions": "Is the post about the product?"
+    }
+  }
+}

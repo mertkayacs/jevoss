@@ -1,0 +1,48 @@
+{
+  "state": {
+    "alert": "Impossible travel",
+    "user": "j.meyer",
+    "events": [
+      {
+        "time": "08:02",
+        "country": "Germany",
+        "app": "mail"
+      },
+      {
+        "time": "08:19",
+        "country": "Brazil",
+        "app": "admin console"
+      }
+    ],
+    "mfa": "passed at 08:19 via push",
+    "user_travel_notice": null
+  },
+  "questions": {
+    "severity": {
+      "type": "score",
+      "instructions": "How severe is this alert?",
+      "criteria": [
+        "Informational",
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What should the on-call analyst do first?",
+      "criteria": {
+        "close": "Close as benign",
+        "contact_user": "Contact the user to confirm",
+        "revoke_sessions": "Revoke sessions and reset credentials",
+        "escalate": "Escalate to incident response"
+      }
+    },
+    "mfa_fatigue_possible": {
+      "type": "noul",
+      "instructions": "Could the MFA approval be an accidental push approval?"
+    }
+  },
+  "reasoning": "auto"
+}

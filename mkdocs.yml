@@ -1,0 +1,37 @@
+site_name: JevOss
+site_description: Open playground to test and improve Jev-type decision models. Suites, probes, calibration and recipes for any /v1/systemone endpoint.
+site_url: https://mertkayacs.github.io/jevoss/
+repo_url: https://github.com/mertkayacs/jevoss
+repo_name: mertkayacs/jevoss
+edit_uri: edit/main/docs/
+copyright: Apache-2.0. Built by Mert Kaya.
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle: {icon: material/weather-night, name: Dark theme}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle: {icon: material/weather-sunny, name: Light theme}
+  font: {text: Inter, code: JetBrains Mono}
+  features: [navigation.sections, navigation.top, content.code.copy, search.suggest]
+extra_css: [assets/brand.css]
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed: {alternate_style: true}
+  - toc: {permalink: true}
+nav:
+  - Overview: index.md
+  - Probes: probes.md
+  - Calibration: calibration.md
+  - Measured problems: problems.md
+  - Recipes: recipes.md

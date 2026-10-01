@@ -1,0 +1,36 @@
+{
+  "state": {
+    "channel": "email",
+    "subject": "Charged twice for March",
+    "body": "Hi, we were billed twice for March on invoice 4411. Please refund the duplicate today. If this keeps happening we will move to another provider."
+  },
+  "questions": {
+    "team": {
+      "type": "choice",
+      "instructions": "Which team should handle this ticket?",
+      "criteria": {
+        "billing": "Invoices, payments, refunds",
+        "technical": "Bugs, outages, integrations",
+        "account": "Login, users, permissions",
+        "sales": "Pricing, upgrades, new contracts"
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How quickly does this need a reply?",
+      "criteria": [
+        "This week",
+        "Within a day",
+        "Within an hour"
+      ]
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "Does the customer ask for money back?"
+    },
+    "churn_threat": {
+      "type": "noul",
+      "instructions": "Does the customer say they may leave?"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "state": {
+    "question": "What year did the Berlin Wall fall?",
+    "reference": "The Berlin Wall fell on 9 November 1989.",
+    "answer_a": "It fell in 1989, on the 9th of November.",
+    "answer_b": "The wall came down in 1991 after German reunification."
+  },
+  "questions": {
+    "better": {
+      "type": "choice",
+      "instructions": "Which answer is more accurate against `reference`?",
+      "criteria": {
+        "a": "answer_a is better",
+        "b": "answer_b is better",
+        "tie": "Both are equally good or equally bad"
+      }
+    },
+    "b_grounded": {
+      "type": "noul",
+      "instructions": "Is `answer_b` consistent with `reference`?"
+    },
+    "a_quality": {
+      "type": "score",
+      "instructions": "Rate `answer_a` for correctness and completeness.",
+      "criteria": [
+        "Wrong",
+        "Partly right",
+        "Right but incomplete",
+        "Right and complete"
+      ]
+    }
+  }
+}

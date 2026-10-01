@@ -1,0 +1,55 @@
+{
+  "state": {
+    "villager": {
+      "name": "Hedda",
+      "role": "farmer",
+      "hunger": 35,
+      "energy": 70,
+      "mood": 60,
+      "inventory": {
+        "grain": 4,
+        "bread": 1
+      }
+    },
+    "time": "dawn",
+    "season": "late summer",
+    "weather": "dark clouds from the west",
+    "fields": {
+      "north_field": "ripe wheat",
+      "south_field": "sown last week"
+    },
+    "village": {
+      "grain": 12,
+      "bread": 6
+    },
+    "events": [
+      "The miller says the rain will reach the valley by noon."
+    ]
+  },
+  "questions": {
+    "action": {
+      "type": "choice",
+      "instructions": "What should Hedda do this morning?",
+      "criteria": {
+        "harvest": "Harvest the ripe wheat on the north field",
+        "sow": "Sow the south field",
+        "trade": "Take grain to the market",
+        "rest": "Rest at home",
+        "help_mill": "Help the miller cover the grain store"
+      }
+    },
+    "share_food": {
+      "type": "noul",
+      "instructions": "Should Hedda share her bread with the harvest crew?"
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is her first task?",
+      "criteria": [
+        "Can wait",
+        "Today",
+        "Right now"
+      ]
+    }
+  }
+}
