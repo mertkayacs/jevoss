@@ -6,7 +6,7 @@ JevOss tests decision models that speak the Jev API (`POST /v1/systemone`). Poin
 [![Docs](https://img.shields.io/badge/docs-mertkayacs.github.io%2Fjevoss-3a7d44)](https://mertkayacs.github.io/jevoss/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
-**[Quickstart](#quickstart) · [What it measures](#what-it-measures) · [Recipes](#recipes) · [Suites](#suites) · [Citation](#citation)**
+**[Quickstart](#quickstart) · [What it measures](#what-it-measures) · [Recipes](#recipes) · [Suites](#suites) · [Citation](#license-and-citation)**
 
 ![Hidden instructions, option order, long policies and negated questions: JevAlt against Intern-Decision-4B, Kev-4B and Laya](docs/assets/charts/fixes.png)
 
@@ -82,11 +82,9 @@ The five new recipes are the examples from the [JevAlt Space](https://huggingfac
 
 See the [docs](https://mertkayacs.github.io/jevoss/) for the probe methods, calibration and recipes.
 
-## License
+## License and citation
 
 Apache-2.0.
-
-## Citation
 
 <details>
 <summary>BibTeX</summary>
