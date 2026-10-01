@@ -1,0 +1,15 @@
+{
+  "state": "Hi, I run operations at a logistics company with 200 employees. Our budget for a new planning tool is approved and we want to decide by the end of the month. Could we book a demo next week?",
+  "questions": {
+    "decision": {
+      "type": "choice",
+      "instructions": "How should sales treat this lead?",
+      "criteria": {
+        "Hot": "budget and timeline confirmed, ready to buy",
+        "Warm": "interested, but no budget or timeline yet",
+        "Cold": "just browsing, no concrete plans",
+        "Not a fit": "outside our market, or our product cannot help them"
+      }
+    }
+  }
+}

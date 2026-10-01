@@ -1,0 +1,15 @@
+{
+  "state": "Monitoring alert at 09:12: the checkout page returns error 500 for every customer. 43 orders failed in the last 10 minutes. The rest of the site loads normally.",
+  "questions": {
+    "decision": {
+      "type": "choice",
+      "instructions": "How severe is this incident?",
+      "criteria": {
+        "Critical": "customers cannot pay, fix it now",
+        "High": "an important feature is broken, fix it today",
+        "Medium": "something is slow or partly broken, fix it this week",
+        "Low": "cosmetic or a single user, plan it in"
+      }
+    }
+  }
+}

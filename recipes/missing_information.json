@@ -1,0 +1,15 @@
+{
+  "state": "Guest message: Hi, we are arriving late tonight, around 23:30. Will someone be at the front desk to give us the keys?",
+  "questions": {
+    "decision": {
+      "type": "choice",
+      "instructions": "Which room type did the guest book?",
+      "criteria": {
+        "Single room": "",
+        "Double room": "",
+        "Family suite": ""
+      }
+    }
+  },
+  "abstain": true
+}

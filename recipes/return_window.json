@@ -1,0 +1,10 @@
+{
+  "state": "My headphones were delivered on 1 September 2026. Your return policy gives 14 days from delivery. Today is 18 September 2026 and the box is still sealed. Can I still send them back?",
+  "questions": {
+    "answer": {
+      "type": "noul",
+      "instructions": "Is this return within the 14-day window?"
+    }
+  },
+  "reasoning": "on"
+}
