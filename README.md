@@ -4,7 +4,9 @@
 
 *Emberwick, a village game where every villager asks a JevAlt model what to do next. Also in [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/gifs/emberwick-tr.gif) and [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/gifs/emberwick-de.gif).*
 
-Watch the one-minute film with sound: [English](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/film/jevalt-film-en-1080p.mp4), [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/film/jevalt-film-tr-1080p.mp4), [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/film/jevalt-film-de-1080p.mp4).
+[![Watch the one-minute film: three mistakes small decision models make and how JevAlt fixes each one](https://raw.githubusercontent.com/mertkayacs/jevalt/media/film-poster-en.jpg)](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/film/jevalt-film-en-1080p.mp4)
+
+*The one-minute film, sound on: three mistakes small decision models make and how JevAlt fixes each one. Also in [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/film/jevalt-film-tr-1080p.mp4) and [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/film/jevalt-film-de-1080p.mp4).*
 
 ![JevOss: test any decision model that speaks the Jev API](https://raw.githubusercontent.com/mertkayacs/jevalt/media/jevoss-card.png)
 
