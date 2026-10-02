@@ -4,9 +4,9 @@ Small decision models share a set of weak spots. JevOss measures them with probe
 
 ![Hidden instructions, option order, long policies and negated questions: JevAlt against Intern-Decision-4B, Kev-4B and Laya](assets/charts/fixes.png)
 
-![What Jev 1.13 lacks and JevAlt has: thinking when unsure, an unknown answer, coverage sets, native Turkish and German, open weights, repeatable answers](assets/charts/jev.png)
+![What Jev 1.13 lacks and JevAlt has: thinking when unsure, coverage sets, models made for Turkish and German, open weights](assets/charts/jev.png)
 
-Kev-4B and Laya lose less accuracy than JevAlt under 600 words of padding (5.4 and 10.4 points, against 12.2 to 17.4). Jev 1.13 is hosted, so its rows come from [TypeSafe's notes](https://docs.typesafe.ai/model-jaggedness/jev-1.13) and an [independent audit](https://github.com/jujumilk3/jev-calibration-audit/blob/main/FINDINGS.md) on a different item set: no option-order flips in 400 items, a 0.125 mean gap between yes/no and two-option answers, and 15 distinct answer sets from 50 identical calls. Every number and every decision: [jevalt-bench results/comparison](https://huggingface.co/datasets/mertkayacs/jevalt-bench/tree/main/results/comparison).
+Kev-4B and Laya lose less accuracy than JevAlt under 600 words of padding (5.4 and 10.4 points, against 12.2 to 17.4). Jev 1.13 is hosted, so its rows come from [TypeSafe's notes](https://docs.typesafe.ai/model-jaggedness/jev-1.13) and an [independent audit](https://github.com/jujumilk3/jev-calibration-audit/blob/main/FINDINGS.md) on a different item set: no option-order flips in 400 items, a 0.125 mean gap between yes/no and two-option answers, and slightly different probabilities for 50 identical calls (15 distinct sets, standard deviations 0.001 to 0.015). Every number and every decision: [jevalt-bench results/comparison](https://huggingface.co/datasets/mertkayacs/jevalt-bench/tree/main/results/comparison).
 
 ## How to reproduce
 
