@@ -62,7 +62,7 @@ Ready requests for real decisions. Run any of them with `jevoss ask recipes/<fil
 The five new recipes are the examples from the [JevAlt Space](https://huggingface.co/spaces/mertkayacs/JevAlt), sent there exactly as written here. Deem-4B's answers on 1 October 2026 are below.
 
 <details>
-<summary>Deem-4B's answers to the Space examples</summary>
+<summary><b>Deem-4B's answers to the Space examples</b></summary>
 
 | Use case | Situation | Question | Answer |
 |---|---|---|---|
@@ -87,7 +87,7 @@ See the [docs](https://mertkayacs.github.io/jevoss/) for the probe methods, cali
 Apache-2.0.
 
 <details>
-<summary>BibTeX</summary>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @software{kaya2026jevoss,
