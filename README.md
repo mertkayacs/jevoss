@@ -112,3 +112,7 @@ Apache-2.0.
 JevOss probes are based on the failure modes documented in [TypeSafe's Jev 1.13 jaggedness notes](https://docs.typesafe.ai/model-jaggedness/jev-1.13). JevOss is an independent project with no affiliation to TypeSafe AI. Jev is a TypeSafe AI model.
 
 If JevOss is useful to you, a star on GitHub helps other people find it.
+
+<a href="https://eschatialabs.com"><img src="https://raw.githubusercontent.com/mertkayacs/jevoss/main/docs/assets/eschatia-labs.png" width="160" alt="Eschatia Labs"></a>
+
+[An Eschatia Labs project](https://eschatialabs.com). [Built by Mert Kaya](https://mertkayacs.com).
