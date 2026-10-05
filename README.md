@@ -8,7 +8,7 @@ JevOss tests decision models that speak the Jev API (`POST /v1/systemone`). Poin
 
 **[Quickstart](#quickstart) · [What it measures](#what-it-measures) · [Recipes](#recipes) · [Suites](#suites) · [Citation](#license-and-citation)**
 
-![Hidden instructions, option order, long policies and negated questions: JevAlt against Intern-Decision-4B, Kev-4B and Laya](docs/assets/charts/fixes.png)
+![Hidden instructions, long irrelevant text, long policies and negated questions: JevAlt against Kev-4B and Laya](docs/assets/charts/fixes.png)
 
 *Same probes and held-out rows for every model, each as shipped. Kev-4B and Laya lose less accuracy under long padding. All results and the Jev 1.13 audit: [measured problems](docs/problems.md).*
 
