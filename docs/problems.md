@@ -10,11 +10,12 @@ Kev-4B and Laya lose less accuracy than JevAlt under 600 words of padding (5.4 a
 
 ## How to reproduce
 
-Install JevOss and start a model server:
+Install JevOss and the JevAlt model server, then start the server:
 
 ```bash
 pip install "jevoss[suites] @ git+https://github.com/mertkayacs/jevoss"
-jevalt serve
+pip install "jevalt[serve,gguf] @ git+https://github.com/mertkayacs/jevalt"
+jevalt serve    # downloads Deem-4B, then listens on http://127.0.0.1:8000
 ```
 
 Run each probe against the server (default endpoint `http://127.0.0.1:8000`):
