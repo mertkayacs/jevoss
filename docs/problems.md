@@ -2,7 +2,7 @@
 
 Small decision models share a set of weak spots. JevOss measures them with probes on 100 typed-decisions items and with held-out rows that each test one weakness, through the same client for every model: the start checkpoint (Intern-Decision-4B), Kev-4B (r10), Laya (0.3.22) and the three JevAlt models, each as shipped.
 
-![Hidden instructions, option order, long policies and negated questions: JevAlt against Intern-Decision-4B, Kev-4B and Laya](assets/charts/fixes.png)
+![Hidden instructions, long irrelevant text, long policies and negated questions: JevAlt against Kev-4B and Laya](assets/charts/fixes.png)
 
 ![What Jev 1.13 lacks and JevAlt has: thinking when unsure, coverage sets, models made for Turkish and German, open weights](assets/charts/jev.png)
 
@@ -10,11 +10,12 @@ Kev-4B and Laya lose less accuracy than JevAlt under 600 words of padding (5.4 a
 
 ## How to reproduce
 
-Install JevOss and start a model server:
+Install JevOss and the JevAlt model server, then start the server:
 
 ```bash
 pip install "jevoss[suites] @ git+https://github.com/mertkayacs/jevoss"
-jevalt serve
+pip install "jevalt[serve,gguf] @ git+https://github.com/mertkayacs/jevalt"
+jevalt serve    # downloads Deem-4B, then listens on http://127.0.0.1:8000
 ```
 
 Run each probe against the server (default endpoint `http://127.0.0.1:8000`):
