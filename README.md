@@ -61,7 +61,7 @@ Ready requests for real decisions. Run any of them with `jevoss ask recipes/<fil
 
 The NPC recipe is how [Emberwick](https://emberwick.mertkayacs.com) works: the village sends a request like `npc_decision.json` for every villager's next move, and a JevAlt model answers it.
 
-<a href="https://emberwick.mertkayacs.com"><img src="https://raw.githubusercontent.com/mertkayacs/jevoss/main/docs/assets/emberwick-barn-fire-en.avif" width="560" alt="A barn fire in Emberwick: villagers carry water while a decision model picks each next step"></a>
+<a href="https://emberwick.mertkayacs.com"><img src="https://raw.githubusercontent.com/mertkayacs/jevoss/main/docs/assets/emberwick-barn-fire-en.webp" width="560" alt="A barn fire in Emberwick: villagers carry water while a decision model picks each next step"></a>
 
 *Play [Emberwick](https://emberwick.mertkayacs.com) in the browser, or watch the game in [English](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-en.mp4), [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-tr.mp4) or [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-de.mp4). Stills and loops: [emberwick-videos](https://huggingface.co/datasets/mertkayacs/emberwick-videos).*
 
