@@ -59,6 +59,12 @@ Ready requests for real decisions. Run any of them with `jevoss ask recipes/<fil
 | [`llm_judge.json`](recipes/llm_judge.json) | Which of two answers is more accurate against a reference |
 | [`npc_decision.json`](recipes/npc_decision.json) | What a village farmer does next |
 
+The NPC recipe is how [Emberwick](https://emberwick.mertkayacs.com) works: the village sends a request like `npc_decision.json` for every villager's next move, and a JevAlt model answers it.
+
+<a href="https://emberwick.mertkayacs.com"><img src="https://raw.githubusercontent.com/mertkayacs/jevoss/main/docs/assets/emberwick-barn-fire-en.avif" width="560" alt="A barn fire in Emberwick: villagers carry water while a decision model picks each next step"></a>
+
+*Play [Emberwick](https://emberwick.mertkayacs.com) in the browser, or watch the game in [English](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-en.mp4), [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-tr.mp4) or [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-de.mp4). Stills and loops: [emberwick-videos](https://huggingface.co/datasets/mertkayacs/emberwick-videos).*
+
 The five new recipes are the examples from the [JevAlt Space](https://huggingface.co/spaces/mertkayacs/JevAlt), sent there exactly as written here. Deem-4B's answers on 1 October 2026 are below.
 
 <details>
