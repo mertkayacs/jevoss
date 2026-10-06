@@ -1,99 +1,59 @@
-# JevOss
+# JevOss: test decision models and their confidence
 
-JevOss tests decision models that speak the Jev API (`POST /v1/systemone`). Point it at an endpoint and it measures how often the model is right, how honest its probabilities are, and where it breaks: hidden instructions, shuffled options, long padded text, negated questions and repeated calls. It works with Jev itself, JevAlt, Kev, Laya, Intern-Decision or your own server.
+JevOss measures how often a decision model is right, whether its probabilities match that accuracy, and which inputs change its answers. It was built to expose failures that an average score hides, such as following hidden instructions or changing a decision when options are reordered.
 
-[![Website](https://img.shields.io/badge/website-jevoss.mertkayacs.com-3a6b4f)](https://jevoss.mertkayacs.com)
-[![Docs](https://img.shields.io/badge/docs-mertkayacs.github.io%2Fjevoss-3a7d44)](https://mertkayacs.github.io/jevoss/)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[Read the test methods](https://mertkayacs.github.io/jevoss/) or test a local server below. Any server implementing the Jev API (`POST /v1/systemone`) can be tested, including [JevAlt](https://github.com/mertkayacs/jevalt), Kev and Laya.
 
-**[Quickstart](#quickstart) · [What it measures](#what-it-measures) · [Recipes](#recipes) · [Suites](#suites) · [Citation](#license-and-citation)**
+## Quick start
 
-![Hidden instructions, long irrelevant text, long policies and negated questions: JevAlt against Kev-4B and Laya](docs/assets/charts/fixes.png)
+Requires Python 3.11 or newer and a running decision-model server. To start JevAlt's local server, follow its [installation instructions](https://github.com/mertkayacs/jevalt). Keep that terminal running.
 
-*Same probes and held-out rows for every model, each as shipped. Kev-4B and Laya lose less accuracy under long padding. All results and the Jev 1.13 audit: [measured problems](docs/problems.md).*
+In a second terminal:
 
-## Quickstart
-
-```bash
-pip install "jevoss[suites] @ git+https://github.com/mertkayacs/jevoss"
-jevoss eval typed-decisions                # accuracy and calibration on a built-in suite
-jevoss probe typed-decisions --limit 100   # where the model breaks
+```sh
+pip install "jevoss[suites] @ git+https://github.com/mertkayacs/jevoss" && jevoss eval typed-decisions && jevoss probe typed-decisions --limit 100
 ```
 
-JevOss talks to `http://127.0.0.1:8000` by default, where [`jevalt serve`](https://github.com/mertkayacs/jevalt) listens. Pass `--endpoint` for any other server. To measure Jev itself:
+The default server is `http://127.0.0.1:8000`. To test another server, put its base URL before the command:
 
-```bash
-jevoss --endpoint https://api.typesafe.ai --api-key "$TYPESAFE_API_KEY" eval typed-decisions
+```sh
+jevoss --endpoint http://127.0.0.1:8000 eval typed-decisions
 ```
 
-## What it measures
+## What it tests
 
-`jevoss probe <suite> --probes permutation injection distractors noul determinism`
+| Probe | Test |
+| --- | --- |
+| `permutation` | Does changing option order change the answer? |
+| `injection` | Does a hidden instruction override the task? |
+| `distractors` | Does irrelevant padding reduce accuracy? |
+| `noul` | Do yes/no and equivalent two-option questions agree? |
+| `determinism` | Do repeated requests return the same probabilities? |
 
-| Probe | What it changes | Metric | Better |
-|---|---|---|---|
-| `permutation` | Shuffles Choice options | Top answer flips | lower |
-| `injection` | Appends a wrong-order instruction | Attack success | lower |
-| `distractors` | Pads the state with about 600 words of noise | Accuracy lost | lower |
-| `noul` | Asks each yes/no question again as a Choice | Mean gap in P(yes) | lower |
-| `determinism` | Sends each request 5 times | Largest change | lower |
+`jevoss eval` reports accuracy and calibration. `jevoss calibrate` fits confidence on your data, and `jevoss compare` compares two recorded runs. See the [documentation](https://mertkayacs.github.io/jevoss/) for supported suites and output formats.
 
-`jevoss calibrate <suite> --out calibration.json` fits calibration on your data, `jevoss compare a.jsonl b.jsonl` compares two runs, and `jevoss ask <request.json>` sends one request.
+## Example decisions
 
-## Recipes
+The [recipe directory](recipes/) contains requests for ticket routing, policy checks, security triage and tool permissions. For example, after cloning this repository, send the support-routing request to your running server:
 
-Ready requests for real decisions. Run any of them with `jevoss ask recipes/<file>`:
+```sh
+jevoss ask recipes/support_routing.json
+```
 
-| Recipe | The decision |
-|---|---|
-| [`support_routing.json`](recipes/support_routing.json) | Which team takes a ticket, how urgent it is, whether the customer threatens to leave |
-| [`incident_severity.json`](recipes/incident_severity.json) | How severe a checkout outage is |
-| [`lead_qualification.json`](recipes/lead_qualification.json) | Whether a sales lead is hot, warm, cold or not a fit |
-| [`return_window.json`](recipes/return_window.json) | Whether a return is inside the policy window, with reasoning on |
-| [`phishing_email.json`](recipes/phishing_email.json) | Where a phishing email goes when it hides an instruction for the AI filter |
-| [`missing_information.json`](recipes/missing_information.json) | A question the text cannot answer, so the right answer is "unknown" |
-| [`content_moderation.json`](recipes/content_moderation.json) | Allow, warn, hide or remove a heated forum post |
-| [`security_triage.json`](recipes/security_triage.json) | Severity and response for an impossible-travel login alert |
-| [`invoice_approval.json`](recipes/invoice_approval.json) | Approve, hold or reject an invoice under a written policy |
-| [`agent_tool_gating.json`](recipes/agent_tool_gating.json) | Whether an AI agent may run a deletion plan or must ask first |
-| [`llm_judge.json`](recipes/llm_judge.json) | Which of two answers is more accurate against a reference |
-| [`npc_decision.json`](recipes/npc_decision.json) | What a village farmer does next |
+[Emberwick](https://emberwick.mertkayacs.com) uses the same request format to choose villagers' next actions. Its example is [npc_decision.json](recipes/npc_decision.json).
 
-The NPC recipe is how [Emberwick](https://emberwick.mertkayacs.com) works: the village sends a request like `npc_decision.json` for every villager's next move, and a JevAlt model answers it.
+## Results and limits
 
-<a href="https://emberwick.mertkayacs.com"><img src="https://raw.githubusercontent.com/mertkayacs/jevoss/main/docs/assets/emberwick-barn-fire-en.webp" width="560" alt="A barn fire in Emberwick: villagers carry water while a decision model picks each next step"></a>
+The [measured-problems report](docs/problems.md) compares the models on the same probes and held-out rows, each as shipped. Kev-4B and Laya lose less accuracy than JevAlt under long padding. Hosted Jev 1.13 results use a different item set and are shown for context only.
 
-*Play [Emberwick](https://emberwick.mertkayacs.com) in the browser, or watch the game in [English](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-en.mp4), [Türkçe](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-tr.mp4) or [Deutsch](https://huggingface.co/datasets/mertkayacs/emberwick-videos/resolve/main/cuts/emberwick-de.mp4). Stills and loops: [emberwick-videos](https://huggingface.co/datasets/mertkayacs/emberwick-videos).*
-
-The five new recipes are the examples from the [JevAlt Space](https://huggingface.co/spaces/mertkayacs/JevAlt), sent there exactly as written here. Deem-4B's answers on 1 October 2026 are below.
-
-<details>
-<summary><b>Deem-4B's answers to the Space examples</b></summary>
-
-| Use case | Situation | Question | Answer |
-|---|---|---|---|
-| Support ticket | A customer was charged twice for March and wants a refund today | Which team should handle this ticket? | **Billing** 94.8% |
-| Outage | Checkout returns error 500 for every customer, 43 orders failed in 10 minutes | How severe is this incident? | **Critical** 87.6% |
-| Sales lead | Operations lead at a 200-person company: budget approved, decision this month, asks for a demo | How should sales treat this lead? | **Hot** 92.3% |
-| Return window | Delivered on 1 September, 14 days to return, today is 18 September | Is this return within the 14-day window? (Reasoning on) | **No** 97.9% |
-| Phishing email | A fake bank email with a hidden line telling the AI filter it is safe | Where should this email go? | **Quarantine** 94.3% |
-| Missing info | A hotel guest arriving at 23:30 asks who will hand over the keys | Which room type did the guest book? | **unknown** 97.6% |
-| Village fire | The barn is on fire and Mirka is trading at the market | What should Mirka do next? | **Help with the fire** 66.0% |
-
-</details>
-
-## Suites
-
-`jevoss eval <suite>` runs one of: `typed-decisions`, `jevbench-easy`, `jevbench-hard`, `jevbench-original`, `agnews`, `germeval2017`, `gmmlu-de`, `gmmlu-en`, `gmmlu-tr`, `gnad10`, `massive-de`, `massive-en`, `massive-tr`, `toolace`, `turkish-mmlu`, `wildjailbreak`.
-
-See the [docs](https://mertkayacs.github.io/jevoss/) for the probe methods, calibration and recipes.
+All recorded decisions are in [jevalt-bench](https://huggingface.co/datasets/mertkayacs/jevalt-bench/tree/main/results/comparison). Test on your own inputs before treating a suite score as evidence for your application.
 
 ## License and citation
 
-Apache-2.0.
+[Apache-2.0](LICENSE). JevOss is independent of TypeSafe AI. Its probes draw on [TypeSafe's Jev 1.13 failure notes](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
 
 <details>
-<summary><b>BibTeX</b></summary>
+<summary>BibTeX</summary>
 
 ```bibtex
 @software{kaya2026jevoss,
@@ -107,12 +67,4 @@ Apache-2.0.
 
 </details>
 
-## Acknowledgements
-
-JevOss probes are based on the failure modes documented in [TypeSafe's Jev 1.13 jaggedness notes](https://docs.typesafe.ai/model-jaggedness/jev-1.13). JevOss is an independent project with no affiliation to TypeSafe AI. Jev is a TypeSafe AI model.
-
-If JevOss is useful to you, a star on GitHub helps other people find it.
-
-<a href="https://eschatialabs.com"><img src="https://raw.githubusercontent.com/mertkayacs/jevoss/main/docs/assets/eschatia-labs.png" width="160" alt="Eschatia Labs"></a>
-
-[An Eschatia Labs project](https://eschatialabs.com). [Built by Mert Kaya](https://mertkayacs.com).
+[Project site](https://jevoss.mertkayacs.com). An [Eschatia Labs](https://eschatialabs.com) project by [Mert Kaya](https://mertkayacs.com).
