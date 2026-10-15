@@ -1,11 +1,14 @@
-<h1 align="center">JevOss</h1>
-
-<p align="center"><b>Accuracy, probability calibration, prompt injection, option-order sensitivity and consistency probes for any Jev-compatible decision-model server.</b></p>
+<p align="center"><img src="assets/banner.webp" alt="JevOss. Free and open source under the Apache-2.0 license." width="1200"></p>
 
 <p align="center">
   <a href="https://github.com/mertkayacs/jevoss"><img src="https://img.shields.io/github/stars/mertkayacs/jevoss?style=flat&logo=github" alt="GitHub stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat" alt="Apache-2.0"></a>
+  <img src="https://img.shields.io/badge/free%20and%20open%20source-yes-0F6B66.svg" alt="free and open source">
 </p>
+
+JevOss is free and open source under the Apache-2.0 license.
+
+<p align="center"><b>Accuracy, probability calibration, prompt injection, option-order sensitivity and consistency probes for any Jev-compatible decision-model server.</b></p>
 
 JevOss measures how often a decision model is right, whether its probabilities match that accuracy, and which inputs change its answers. It was built to expose failures that an average score hides, such as following hidden instructions or changing a decision when options are reordered.
 
