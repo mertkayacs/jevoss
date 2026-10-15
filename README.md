@@ -18,7 +18,7 @@ JevOss measures how often a decision model is right, whether its probabilities m
 - **Open source under Apache-2.0**, with recipes for support routing, security triage and policy checks.
 - Runs any server that speaks the **Jev API (`POST /v1/systemone`)**.
 
-> "JevOss is one of the fastest ways to find the failure modes a headline accuracy score hides." - Mert Kaya
+JevOss finds the failure modes a headline accuracy score hides.
 
 ## Quick start
 
@@ -84,7 +84,7 @@ Any model or service that implements the Jev API (`POST /v1/systemone`). The rep
 
 **What is the Jev API?**
 
-The Jev API accepts a situation, one or more typed questions and returns a chosen option with a probability. It is independent of any single vendor and is used by JevAlt, JevOss and other tools in this ecosystem. The endpoint is `POST /v1/systemone`.
+The Jev API accepts a situation, one or more typed questions and returns a chosen option with a probability. The Jev API comes from TypeSafe AI; JevAlt and JevOss both implement it. The endpoint is `POST /v1/systemone`.
 
 **Can I add my own test cases?**
 

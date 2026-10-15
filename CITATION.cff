@@ -1,13 +1,21 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use JevOss, please cite it as below."
 type: software
 title: "JevOss: Open Evaluation Toolkit for Jev-Type Decision Models"
-version: 0.1.0
-date-released: 2026-10-01
+abstract: "Probes, calibration and recipes for any decision model that speaks the Jev API: accuracy, honest probabilities, and where the model breaks under hidden instructions, shuffled options, padding, negations and repeated calls."
 authors:
   - family-names: Kaya
     given-names: Mert
     orcid: "https://orcid.org/0009-0006-7018-3027"
+version: 0.1.0
+date-released: 2026-10-01
+license: Apache-2.0
 repository-code: "https://github.com/mertkayacs/jevoss"
 url: "https://jevoss.mertkayacs.com"
-license: Apache-2.0
+keywords:
+  - LLM evaluation
+  - decision model
+  - calibration
+  - prompt injection
+  - robustness
+  - benchmark
