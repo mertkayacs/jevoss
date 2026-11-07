@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="JevOss"><rect width="512" height="512" rx="112" fill="#2F4A3A"/><g transform="translate(60.65 59.13) scale(6.1046)"><path d="M10 52 V32 A6 6 0 0 1 22 32 V52 Z" fill="#9CC3AA"/><path d="M26 52 V16 A6 6 0 0 1 38 16 V52 Z" fill="#E08A63"/><path d="M42 52 V40 A6 6 0 0 1 54 40 V52 Z" fill="#9CC3AA"/><path d="M9.5 52 L54.5 52" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke="#E6EEE5"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="title">
+  <title id="title">JevOss app icon</title>
+  <rect width="1024" height="1024" rx="230" fill="#2F4A3A"/>
+  <path fill="#FDF8F1" d="M360.81 196.24V489.03A151.19 151.19 0 0 0 457.67 630.11A37.61 37.61 0 0 1 481.76 665.21V767.32A14.01 14.01 0 0 1 478.81 775.92L545.19 775.92A14.01 14.01 0 0 1 542.24 767.32V665.21A37.61 37.61 0 0 1 566.33 630.11A151.19 151.19 0 0 0 663.19 489.03V196.24H579.11V489.03A67.11 67.11 0 0 1 444.89 489.03V196.24Z"/>
+  <circle fill="#E08A63" cx="512" cy="801.73" r="42.04"/>
+</svg>

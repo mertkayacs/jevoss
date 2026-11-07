@@ -1,50 +1,76 @@
-# JevOss brand kit
+# JevOss logo
 
-The JevOss mark is three evaluation bars on a baseline, the tallest one in terracotta between two sage bars. The logo pairs it with the wordmark `JevOss` set in Newsreader.
+A tuning fork rings one true note that every instrument is checked against. JevOss does the same for decision
+models: the same probes for every model, and a check on whether its confidence rings true. The single clay ball at
+the foot is the one warm accent in the mark.
 
 ## Files
 
-| Use | File |
+| File | Use |
 |---|---|
-| Logo on a light background | `svg/jevoss-logo-on-light.svg`, `png/jevoss-logo-on-light-1600.png` |
-| Logo on a dark background | `svg/jevoss-logo-on-dark.svg`, `png/jevoss-logo-on-dark-1600.png` |
-| Mark alone on a light background | `svg/jevoss-mark.svg`, `png/jevoss-mark-1024.png` |
-| Mark alone on a dark background | `svg/jevoss-mark-on-dark.svg` |
-| App icon (512 px tile, corner radius 112) | `svg/jevoss-appicon.svg`, `png/jevoss-appicon-1024.png` |
-| Favicon, the app icon tile at small size (reads on light and dark tabs) | `favicon/favicon.svg` |
-| The same favicon for older browsers (16, 32 and 48 px in one file) | `favicon/favicon.ico` |
-| The same favicon as a 32 px PNG | `favicon/favicon-32.png` |
-| Home screen icon (180 px, opaque) | `favicon/apple-touch-icon.png` |
+| `svg/jevoss-mark.svg` | the mark on white and light grounds |
+| `svg/jevoss-mark-on-dark.svg` | the mark on #0D1117, #1F2430 and other dark grounds |
+| `svg/jevoss-mark-black.svg`, `svg/jevoss-mark-white.svg` | one colour; the white file is thinned by 0.75 units per side so it does not look heavier than the black one |
+| `svg/jevoss-sticker.svg` | the mark on a white die-cut body (15-unit offset, about 6 %), for coloured sheets |
+| `svg/jevoss-logo-on-light.svg`, `svg/jevoss-logo-on-dark.svg` | horizontal logo, height 256 |
+| `svg/jevoss-logo-stacked.svg` | mark above the wordmark |
+| `svg/jevoss-appicon.svg` | 1024 tile in forest with the mark in parchment |
+| `png/` | renders of the files above at 1024, 1600 and 512 px |
+| `favicon/` | `favicon.svg` (16 px cut, switches colours in dark mode), `favicon.ico` (16, 32, 48), `favicon-32.png`, `apple-touch-icon.png` (180, full bleed), `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` (mark inside the 80 % safe circle) |
 
-The logo and mark PNGs have transparent backgrounds. The app icon PNG and the favicons have transparent rounded corners. The home screen icon is a full opaque square, because iOS rounds the corners itself.
+Every PNG is rendered with rsvg-convert, from these SVGs or from the sources in `../build/` (the favicon cut without
+its dark-mode style, the full-bleed tile for `apple-touch-icon.png` and the maskable tile). The SVGs contain only
+paths, rectangles and circles, plus one small `<style>` block in `favicon.svg` for dark mode: no live text, rasters,
+filters, masks or gradients.
 
-The sage side bars use `#71967F` on light surfaces, because the site sage `#9CC3AA` measures 1.94:1 on white. On dark surfaces they keep `#9CC3AA`.
+## Colours
 
-## Colour
+Contrast is the WCAG 2 ratio, measured on each ground.
 
-| Role | Light surfaces | Contrast on #FFFFFF / #FDF8F1 | Dark surfaces | Contrast on #0D1117 / #12171D |
-|---|---|---|---|---|
-| Ink | `#2F4A3A` | 9.72 / 9.19 | `#E6EEE5` | 15.97 / 15.20 |
-| Accent | `#C8693F` | 3.78 / 3.58 | `#E08A63` | 7.20 / 6.85 |
-| Secondary | `#71967F` | 3.30 / 3.12 | `#9CC3AA` | 9.73 / 9.26 |
+| Colour | HEX | on #FFFFFF | on #FDF8F1 | on #0D1117 | Use |
+|---|---|---|---|---|---|
+| Forest | `#2F4A3A` | 9.72 | 9.19 | 1.95 | fork and wordmark on light grounds; app tile |
+| Clay | `#C8693F` | 3.78 | 3.58 | 5.00 | the ball on light grounds |
+| Sage | `#9CC3AA` | 1.94 | 1.84 | 9.73 | fork on dark grounds (7.98 on #1F2430) |
+| Light clay | `#E08A63` | 2.63 | 2.49 | 7.20 | the ball on dark grounds (5.90 on #1F2430) and on the forest tile (3.69) |
+| Cream | `#F1E9DC` | 1.20 | 1.14 | 15.71 | wordmark on dark grounds (12.88 on #1F2430) |
+| Parchment | `#FDF8F1` | | | 17.91 | the fork on the forest app tile (9.19) |
 
-| App icon | Colour | Contrast on the tile |
-|---|---|---|
-| Tile | `#2F4A3A` | |
-| Ink | `#E6EEE5` | 8.20 |
-| Accent | `#E08A63` | 3.69 |
-| Secondary | `#9CC3AA` | 5.00 |
+## Clear space and minimum sizes
 
-README icon colour: `#BC5F34`, 4.35 on #FFFFFF and 4.35 on #0D1117.
+- Clear space: the diameter of the ball (30 units in the 256 mark, about 14 % of the mark's height) on every side of
+  the mark and of both logos.
+- Mark: 20 px high on screen keeps the ball; below 20 px use `favicon/favicon.svg`, which is drawn on whole pixels for
+  16 px.
+- Horizontal logo: 24 px high on screen. Stacked logo: 64 px high.
+- Print (not proofed yet): mark 6 mm, horizontal logo 7 mm high.
 
-## Usage
+## Typeface
 
-- Pick the file that matches the background: on-light files for white or paper, on-dark files for dark surfaces. In a README, use a `<picture>` element with the dark logo as the `prefers-color-scheme: dark` source.
-- Keep clear space around the logo of at least half the height of the mark.
-- Smallest sizes: 16 px for the mark, 120 px wide for the logo.
-- The wordmark is drawn as outlined paths, so it looks the same everywhere. Use the supplied files and leave the letters as they are.
-- Do not recolour, rotate, stretch, outline or add effects to the mark.
+The wordmark is Newsreader by Production Type, SIL Open Font License 1.1 ("Copyright 2020 The Newsreader Project
+Authors"), taken from github.com/google/fonts (`ofl/newsreader`). Instance: weight 560, optical size 18; tracking
+-20 units; J and e kerned -40 units. Two changes make it ours: the top edge of the e's crossbar is level (Newsreader
+tilts it about 3 degrees), and the diagonal cuts of the s terminals are trued to 60 degrees. The letters are outlined
+paths, so no font is needed to show the logo. On the JevOss site, Newsreader sets headings and Geist sets body text.
 
-## Font
+## Do
 
-Newsreader, wght 600, opsz 48. Source: `Newsreader[opsz,wght].ttf` from [google/fonts](https://github.com/google/fonts/tree/86aced91de05cd4f96a06838124cca45be337b2b/ofl/newsreader) at commit `86aced91de05`. Licence: SIL Open Font License 1.1. The letters are converted to paths, so the font is not needed to display the logo.
+- Use the light files on white and parchment, the on-dark files on dark grounds, the sticker on coloured sheets.
+- Keep the fork forest (or sage on dark) and the ball clay (or light clay on dark).
+- Keep the fork upright and the ball at the foot.
+- Use `favicon.svg` and the favicon set for browser tabs and home screens.
+
+## Don't
+
+- Put the light mark on a dark ground (forest on #0D1117 is 1.95:1).
+- Recolour the ball to match the fork, or colour the fork clay.
+- Rotate, tilt, stretch or outline the fork, or add sound waves, motion lines, shadows or gradients.
+- Place the mark on a busy photo without the sticker body.
+- Retype the wordmark in any font; use the outlined files.
+- Use the full mark below 20 px.
+
+## Rebuilding
+
+`FONT_DIR=<folder with Newsreader[opsz,wght].ttf> tools/build_kit.sh` (run from `logos/jevoss/`) regenerates the
+wordmark outlines, every SVG, every PNG and the favicon set; `tools/kit.py` holds the geometry and colours, and
+`tools/kit_preview.py` rebuilds `preview-final.png`.

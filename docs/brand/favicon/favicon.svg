@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64" role="img" aria-label="JevOss"><rect width="512" height="512" rx="112" fill="#2F4A3A"/><g transform="translate(60.65 59.13) scale(6.1046)"><path d="M10 52 V32 A6 6 0 0 1 22 32 V52 Z" fill="#9CC3AA"/><path d="M26 52 V16 A6 6 0 0 1 38 16 V52 Z" fill="#E08A63"/><path d="M42 52 V40 A6 6 0 0 1 54 40 V52 Z" fill="#9CC3AA"/><path d="M9.5 52 L54.5 52" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke="#E6EEE5"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-labelledby="title">
+  <title id="title">JevOss</title>
+  <style>@media (prefers-color-scheme: dark) { .f { fill: #9CC3AA } .b { fill: #E08A63 } }</style>
+  <path class="f" fill="#2F4A3A" d="M4 1V7A4 4 0 0 0 6.4 10.67A1 1 0 0 1 7 11.58V12.43A0.5 0.5 0 0 1 6.89 12.74L9.11 12.74A0.5 0.5 0 0 1 9 12.43V11.58A1 1 0 0 1 9.6 10.67A4 4 0 0 0 12 7V1H10V7A2 2 0 0 1 6 7V1Z"/>
+  <circle class="b" fill="#C8693F" cx="8" cy="13.6" r="1.4"/>
+</svg>
