@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
-  <title id="title">JevOss logo for dark backgrounds</title>
-  <path fill="#9CC3AA" d="M76.75 18.25V117.5A51.25 51.25 0 0 0 109.58 165.33A12.75 12.75 0 0 1 117.75 177.22V211.84A4.75 4.75 0 0 1 116.75 214.75L139.25 214.75A4.75 4.75 0 0 1 138.25 211.84V177.22A12.75 12.75 0 0 1 146.42 165.33A51.25 51.25 0 0 0 179.25 117.5V18.25H150.75V117.5A22.75 22.75 0 0 1 105.25 117.5V18.25Z"/>
-  <circle fill="#E08A63" cx="128" cy="223.5" r="14.25"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" aria-labelledby="title" role="img" viewBox="0 0 256 256"><title id="title">JevOss logo for dark backgrounds</title><path fill="#9CC3AA" d="M76.75 18.25V117.5A51.25 51.25 0 0 0 109.58 165.33A12.75 12.75 0 0 1 117.75 177.22V211.84A4.75 4.75 0 0 1 116.75 214.75L139.25 214.75A4.75 4.75 0 0 1 138.25 211.84V177.22A12.75 12.75 0 0 1 146.42 165.33A51.25 51.25 0 0 0 179.25 117.5V18.25H150.75V117.5A22.75 22.75 0 0 1 105.25 117.5V18.25Z"/><circle cx="128" cy="223.5" r="14.25" fill="#E08A63"/></svg>
